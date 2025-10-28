@@ -9,7 +9,7 @@
 
 智能机器人配置管理平台，一键接入ChatGPT对话，无缝适配Dify,FastGPT,Coze知识库！
 
-支持群组，个人定义不同的角色，灵活配置各种对话模式，绘图，识图，联网查询，GPTs，语音分析，技能丰富多样！拥有各种定时任务，Rss订阅，倒计时提醒，新闻咨询发送，批量群发，转发，跨群聊天，提醒功能，Api发送消息
+支持群组，个人定义不同的角色，灵活配置各种对话模式，绘图，识图，联网查询，GPTs，语音分析，技能丰富多样！拥有各种定时任务，RSS订阅，倒计时提醒，新闻咨询发送，批量群发，转发，跨群聊天，提醒功能，API发送消息
 
 配合智能微秘书客户端可以一键接入公众号，企业微信，Gitter，Lark，WhatsApp，5G消息等Wechaty所支持的协议
 
@@ -32,72 +32,123 @@ node 版本 >18
 
 ![](./doc/img/aibot.png)
 
-- [x] 每日说,定时给女朋友发送每日天气提醒，以及每日一句
+### 🌟 群发助手
+- 可以批量发送消息到多个群聊或好友，也可以批量设置群公告。
 
-* 定时提醒
+### 🔄 转发助手
+- 管理员给机器人发送的消息可以转发给指定的群聊或好友，实现群发效果。
 
-- [x] 当天定时提醒 例："提醒 我 18:00 下班了，记得带好随身物品"
-- [x] 每天定时提醒 例："提醒 我 每天 18:00 下班了，记得带好随身物品"
-- [x] 指定日期提醒 例："提醒 我 2019-05-10 8:00 还有 7 天是女朋友生日了，准备一下"
+### 🌐 群消息同步
+- 跨群聊天，打破群与群之间的壁垒，多个群的消息可以相互同步。1 群的人可以和 2 群的人聊天，反之亦然。
 
-* 智能机器人
+### 📩 回调事件
+- 适用于有开发能力且有自己服务器的人员，可以配置指定内容转发到你的服务器，由你来返回回复的内容。
 
-- [x] 天行机器人
-- [x] 图灵机器人
-- [x] 微信开放对话平台
-- [x] 火出圈的ChatGPT
-  - [x] 支持多种模型在线切换，代理在线配置
-  - [x] 自定义对话配置， 不同群，不同好友，不同的对话配置
-  - [x] prompts 市场，设定不同角色
-  - [x] 无缝对接Dify和FastGPT向量知识库平台
-  - [x] GPT-4V识图功能
-  - [x] DALL-E3绘图功能
-  - [x] 多模态，Dify插件，联网模式，爬取网站内容
-- [ ] 更多
+### 📰 RSS订阅推送
+- 配置 RSS 源，当 RSS 源内容更新时，会推送到指定的群或好友。
 
-* 定时任务
+## 智能配置
 
-- [x] 不同新闻资讯定时发送
-- [x] 付费定制个性化内容定时发送
-- [x] 固定素材内容定时发送
-- [x] 倒计时提醒
-- [x] rss订阅推送
-- [ ] 更多功能等你来 pr
+### ⚙️ 基础配置
+- 自动通过好友，并发送欢迎词。
+- 解析小程序和 H5 链接内容。
+  
+#### 🤖 机器人触发范围
+- 允许配置所有群、所有好友，或群和好友都生效。
 
-* 关键词
+#### 🚫 敏感词过滤
+- 支持配置敏感词过滤。
 
-- [x] 关键词加好友，加好友欢迎词设置
-- [x] 关键词加群，群欢迎词设置
-- [x] 关键词回复
-- [x] 技能中心
-    - [x] 天气查询 例："上海天气"
-    - [x] 垃圾分类 例："?香蕉皮"
-    - [x] 名人名言 例： "名人名言"
-    - [x] 老黄历查询 例： "黄历 2019-6-13"
-    - [x] 姓氏起源 例： "姓陈"
-    - [x] 星座运势 例： "\*双子座"
-    - [x] 神回复 例： "神回复"
-    - [x] 获取表情包 例： "表情包你好坏"
-    - [x] 获取美女图 例： "美女图"
-    - [x] 群合影 例： "群合影"
-    - [x] 牛年头像 例： "牛气冲天"
-    - [ ] 更多待你发现
-- [x] 进群自动欢迎
-- [x] 加好友自动回复
+### 🤖 智能机器人回复
+- **天行机器人**：需要申请天行机器人权限。
+- **图灵机器人**：需要申请图灵机器人 Key。
+- **微信对话开放平台**：自行申请 API Key 等信息。
+- **ChatGPT**：支持配置代理地址和兼容的第三方 API 地址，支持配置 Prompt 来设定角色。
+- **Dify**：可挂载知识库，实现私域问答或客服效果。
+- **FastGPT**：同样可挂载知识库，实现私域问答或客服效果。
+  
+#### 🛠️ 其他机器人
+- Qanything
+- Coze
+- 扣子
 
-* 自动更新配置文件，无需重启
+### ❓ 简单问答
+- 指定关键词回复指定素材内容，关键词可以模糊或精准匹配，可用于固定问答、产品信息查询、暗号获取等。
 
-- [x] 默认给机器人发送 ‘更新’ 触发拉取新配置文件操作，可在面板`小助手配置->关键词回复->关键词事件`进行修改关键词
+### 🎉 技能中心
+- 系统内置技能，设置不同关键词触发不同效果，例如名人名言、土味情话、垃圾分类、黄历查询等，增加趣味性。
 
-* 特色功能
+## GPT自定义对话配置
 
-- [x] api发送消息
-- [x] 主动更新配置
-- [x] 主动同步好友和群列表
-- [x] 跨群聊天，自动转发消息
-- [x] 不同好友或者群组设置不同的ChatGPT角色，实现千人千面
+### 💬 自定义对话
+- 针对好友或群组设置不同角色，实现千人千面的效果。
 
-更多详情介绍：[功能概览](https://help.aibotk.com/?plugin=czw_emDoc&post=2)
+🔄 支持切换多种机器人
+- ChatGPT, Dify, FastGPT, 扣子, Coze, Qanything 等。
+
+⏳ 支持设置对话次数限制，带文本审核接口。
+ 
+ 🎤 语音识别与发送（企微协议支持，需定制开通）。
+ 
+🔑 支持设置不同关键词触发不同角色，无需 @ 即可触发。
+
+🎭 角色预设
+
+- 提前预设 Prompt，系统内置优秀 Prompt。
+
+## 定时任务
+
+### ☀️ 每日说
+- 固定早安问候内容、天气、每日情话。
+
+### 📅 个性化内容定制推送
+- 定制个性化内容进行定时推送，可以是第三方网站内容或爬取内容。
+
+### ⏲️ 倒计时提醒
+- 设置未来时间进行每天倒计时提醒。
+
+### 📦 固定素材内容发送
+- 每天固定时间发送固定文字、图片等，用于提醒下班、喝水等。
+
+### 📰 不同分类新闻内容发送
+- 定时发送各种分类新闻，如娱乐新闻、国内新闻、国际新闻等。
+
+### 🔔 对话设置提醒
+- 好友私聊发送固定格式的内容可创建提醒，例如“提醒我每天9:00记得打卡上班”。
+
+## 群聊列表管理
+
+💬 在线发送消息到群聊
+- 支持文字、图片、文件、小程序、H5链接等格式。
+
+📜 在线发送固定素材内容到群聊
+
+🗝️ 关键词进群管理
+
+- 配置进群关键词及欢迎词。
+
+## 好友列表
+
+💌 在线发送消息到好友
+
+## 素材中心
+
+📝 文字素材 
+📁 文件、图片素材 
+🌐 小程序素材 
+🔗 H5链接卡片素材 
+
+## 开放 API 功能
+
+⚙️ 任意系统调用接口发送消息到群聊和好友，支持发送文字、图片、视频等格式。
+  
+👥 获取所有好友列表和群列表。
+
+## 📞 其他定制功能
+
+图像识别，语音识别，语音发送，自定义机器人接口开放请加入交流群，联系管理员即可
+
+更多详情介绍：[功能概览](https://help.aibotk.com/?plugin=czw_emDoc&post=31)
 
 ## 提前准备
 
@@ -180,9 +231,13 @@ node 版本 >18
 [![](https://img.aibotk.com/aibotk/help/7NOgdA20240112114359.png)](https://img.aibotk.com/aibotk/help/7NOgdA20240112114359.png)
 
 拉取完毕的大小大概不到 500M ,如果你拉取的大小超过 1G，大概率是拉取错版本了，请切换成官方源拉取
+
+> 国内用户可以用这个镜像地址进行拉取 registry.cn-hangzhou.aliyuncs.com/aibotk/wechat-assistant:latest
+
 #### step1： 拉取镜像
 
 ```shell
+# docker pull registry.cn-hangzhou.aliyuncs.com/aibotk/wechat-assistant:latest
 
 docker pull aibotk/wechat-assistant
 
@@ -192,8 +247,9 @@ docker pull aibotk/wechat-assistant
 
 
 ```shell
-docker run -d -e AIBOTK_KEY="微秘书apikey" -e AIBOTK_SECRET="微秘书apiSecret" --name=wechatbot aibotk/wechat-assistant
+# docker run -d -e AIBOTK_KEY="微秘书apikey" -e AIBOTK_SECRET="微秘书apiSecret" --name=wechatbot registry.cn-hangzhou.aliyuncs.com/aibotk/wechat-assistant:latest
 
+docker run -d -e AIBOTK_KEY="微秘书apikey" -e AIBOTK_SECRET="微秘书apiSecret" --name=wechatbot aibotk/wechat-assistant
 ```
 
 查看docker日志
@@ -231,76 +287,52 @@ Gitpod 是一个在线和开源平台，用于自动化和现成代码的开发�
 环境变量：AIBOTK_KEY和AIBOTK_SECRET必填
 
 ### ipad协议运行
-如果你有ipad的token，可以执行以下命令
 
-```shell
-
-docker run -d -e PAD_LOCAL_TOKEN="你申请的ipadlocal token" -e AIBOTK_KEY="微秘书apikey" -e AIBOTK_SECRET="微秘书apiSecret" --name=wechatbot aibotk/wechat-assistant
-
-```
+查看：[如何使用padlocal协议](https://github.com/leochen-g/wechat-assistant-pro/issues/61)
 
 ### 企微协议运行
-如果你有企微的token，可以执行以下命令
 
-```shell
-
-docker run -d -e WORK_PRO_TOKEN="你申请的企微 token" -e AIBOTK_KEY="微秘书apikey" -e AIBOTK_SECRET="微秘书apiSecret" --name=wechatbot aibotk/wechat-assistant
-
-```
-
-### windows协议
-
-```
-参考：[engine协议部署](https://help.aibotk.com/?plugin=czw_emDoc&post=8)
-```
-
-项目根目录执行命令：`npm run engine`
+查看：[如何使用企微部署](https://github.com/leochen-g/wechat-assistant-pro/issues/60)
 
 ### 公众号部署
 
-公众号部署目前仅只支持源码部署配置
+#### 提前准备
 
-修改文件`src/office.js`文件变量
+1、必须有一个备案好的域名，绑定映射到容器的端口8077，否则无法在公众号后台配置
+2、需要在公众号开发配置里添加运行容器的ip白名单，否则消息无法调通
 
-```javascript
-import {WechatyBuilder} from 'wechaty'
-import {WechatyWebPanelPlugin} from 'wechaty-web-panel'
-import {PuppetOA} from 'wechaty-puppet-official-account'
-const name = 'office-assistant-pro';
-let bot = '';
-const oa = new PuppetOA({
-    appId           : '公众号appid',
-    appSecret       : '公众号appSecret',
-    token           : '公众号加密token',
-    // personalMode: true, // 如果你是个人订阅号或者未认证 请开启此项
-    // port 和 webhookProxyUrl 自己选择一个
-    // port: 8077, // 有自己域名或者服务器 可以启用这个 服务启动的端口 自己映射好配到公众号后台机就行
-    webhookProxyUrl: 'https://****.loca.lt'  // 如果没有自己的域名可以直接用默认自带穿透代理服务localtunnel ***替换成随机字符串即可  这个域名记得配置到公众号后台
-})
+#### 启动命令
 
+参数说明
 
-bot = WechatyBuilder.build({
-    name, // generate xxxx.memory-card.json and save login data for the next login
-    puppet: oa,
-});
+AIBOTK_KEY: 微秘书apikey
 
+AIBOTK_SECRET: 微秘书apiSecret
 
-bot
-    .use(
-        WechatyWebPanelPlugin({
-            apiKey: '****',
-            apiSecret: '****'
-        }
-    ))
-bot.start()
-    .catch((e) => console.error(e));
+OFFICE_APPID: 公众号AppId
+
+OFFICE_APPSECRET: 公众号AppSecret
+
+OFFICE_TOKEN: 公众号自己随机写的token
+
+OFFICE_IS_PERSON: 是不是个人订阅号或者未认证的服务号，如果是个人号或者未认证的服务号，3s内必须响应消息，否则无法发出消息。如果是认证的服务号，使用的是客服回复接口，不受回复时间限制
+
+认证服务号或者认证非个人订阅号启动方式
+
+```
+docker run -d -e OFFICE_APPID="公众号AppId" -e OFFICE_APPSECRET="公众号AppSecret" -e OFFICE_TOKEN="公众号自定义的Token" -e OFFICE_IS_PERSON="false"  -e AIBOTK_KEY="微秘书apikey" -e AIBOTK_SECRET="微秘书apiSecret" -p 8077:8077 --name=officebot registry.cn-hangzhou.aliyuncs.com/aibotk/wechat-assistant:latest
 ```
 
-执行命令：`npm run office`
+个人订阅号或者非认证服务号启动方式
+
+```
+docker run -d -e OFFICE_APPID="公众号AppId" -e OFFICE_APPSECRET="公众号AppSecret" -e OFFICE_TOKEN="公众号自定义的Token" -e OFFICE_IS_PERSON="true"  -e AIBOTK_KEY="微秘书apikey" -e AIBOTK_SECRET="微秘书apiSecret" -p 8077:8077 --name=officebot registry.cn-hangzhou.aliyuncs.com/aibotk/wechat-assistant:latest
+```
+
 
 ## 体验与交流
 
-扫描下方二维码，添加智能微秘书，体验以上所有功能，发送加群关键词即可进入交流群，如果微信无法添加可以先进QQ群：1045575073
+扫描下方二维码，添加智能微秘书，体验以上所有功能，发送加群关键词即可进入交流群，如果微信无法添加可以先进QQ群：1006782749
 
 ![](http://image.xkboke.com/picgo/202301141927005.png)
 
@@ -310,7 +342,7 @@ bot.start()
 
 ## 常见问题处理
 
-参见[http://wechat.aibotk.com/docs/question](http://wechat.aibotk.com/docs/question)
+参见[https://help.aibotk.com](https://help.aibotk.com/?plugin=czw_emDoc&post=5)
 
 ## 面板预览
 
@@ -328,9 +360,6 @@ bot.start()
 
 ![](./doc/img/func.jpeg)
 
-跨群聊天
-
-<img src="./doc/img/async.png" width="300">
 
 
 ## 免责声明
